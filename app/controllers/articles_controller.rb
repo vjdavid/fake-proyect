@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :find_article, only: [:show, :edit]
 
   def index
-    @article = Article.all
+    @articles = Article.all
   end
 
   def create
@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.permit(:name, :description)
+    params.permit(:title, :text)
   end
 
   def find_article
