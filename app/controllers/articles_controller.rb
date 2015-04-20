@@ -1,6 +1,10 @@
 class ArticlesController < ApplicationController
   before_action :find_article, only: [:show, :edit]
 
+  def index
+    @article = Article.all
+  end
+
   def create
    @article = Article.create(article_params)
    @article.save
